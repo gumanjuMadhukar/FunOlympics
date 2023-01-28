@@ -1,0 +1,38 @@
+<%- include('partials/head', {'title': title}) %>
+
+<h2 class="title is-2"><%= title %></h2>
+
+ <div class="container">
+    <div class="columns is-multiline">
+
+      <h2>News</h2>
+      <table border="1">
+          <!-- <tr>
+              <th>S.N</th>
+              <th>News</th>
+              <th>Description</th>
+              
+          </tr> -->
+          
+          <%
+          if(news.length!=0){
+          var i=1;
+          news.forEach(function(data){
+          %>
+          <tr>
+              <td><%=i; %></td>
+              <td><%=data.title %></td>
+              <td><%=data.Description %></td>
+             
+            <!-- <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
+              <td><a href="/users/delete/<%=data.id%>">Delete</a></td>  -->
+          </tr>
+          <%  i++; }) %>
+          <% } else{ %>
+              <tr>
+                  <td colspan="7">No Data Found</td>
+              </tr>
+          <% } %>
+      </table>
+    </div>
+</div> 
